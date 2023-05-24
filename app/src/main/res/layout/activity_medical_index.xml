@@ -53,13 +53,14 @@
             android:orientation="horizontal"
             android:layout_marginStart="5sp"
             android:layout_marginTop="10sp">
+
             <RadioButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="20sp"
                 android:text="Nam"
-                android:textSize="17sp"
                 android:textColor="#191414"
-                android:layout_marginStart="20sp"/>
+                android:textSize="17sp" />
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -400,4 +401,14 @@
         android:textColor="#FFF"
         android:textSize="15sp"
         android:layout_centerInParent="true"/>
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btn_predict"
+        android:gravity="center"
+        android:textColor="@color/teal_700"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20sp"/>
 </RelativeLayout>
