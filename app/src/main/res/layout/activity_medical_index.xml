@@ -17,17 +17,17 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ico_stroke"
-            android:layout_margin="15dp"/>
+            android:layout_margin="12dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Stroke Prediction"
-            android:textSize="32sp"
-            android:textColor="#191414"
+            android:textSize="31sp"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
             android:layout_marginTop="40dp"
-            android:layout_marginStart="10dp"/>
+            android:layout_marginStart="5dp"/>
     </LinearLayout>
 
     <LinearLayout
