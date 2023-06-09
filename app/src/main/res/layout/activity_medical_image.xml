@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Medical_Image_Activity">
+
+    <ImageView
+        android:id="@+id/iv_predict_image"
+        android:layout_width="370sp"
+        android:layout_height="370sp"
+        android:src="@drawable/ico_stroke"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18sp"/>
+
+    <TextView
+        android:id="@+id/tv_result_predict_image"
+        android:layout_below="@id/iv_predict_image"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/result_predict_image"
+        android:textSize="25sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/tv_result_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_take_photo"
+        android:layout_below="@id/tv_result_predict_image"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20sp"
+        android:textColor="@color/teal_700"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btn_take_photo"
+        android:layout_above="@id/btn_launch_gallery"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10sp"
+        android:layout_width="290sp"
+        android:layout_height="60sp"
+        android:text="@string/btn_take_photo"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btn_launch_gallery"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30sp"
+        android:layout_width="290sp"
+        android:layout_height="60sp"
+        android:text="@string/btn_launch_gallery"
+        android:textSize="20sp"
+        android:textColor="@color/white"/>
+</RelativeLayout>

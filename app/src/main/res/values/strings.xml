@@ -1,5 +1,34 @@
 <resources>
     <string name="app_name">StrokePrediction</string>
     <!-- TODO: Remove or change this placeholder text -->
+    <string name="ttl_index">Stroke Prediction</string>
+
+    <string name="btn_predict">DỰ ĐOÁN</string>
+    <string name="btn_predict_index"> Dự Đoán Bằng Chỉ Số </string>
+    <string name="btn_predict_image">Dự Đoán Bằng Hình Ảnh</string>
+    <string name="btn_take_photo">Chụp Ảnh</string>
+    <string name="btn_launch_gallery">Lấy Ảnh Từ Thư Viện</string>
+
+    <string name="rb_yes">có</string>
+    <string name="rb_no">Không</string>
+    <string name="rb_formerly">Đã Từng</string>
+    <string name="rb_male">Nam</string>
+    <string name="rb_female">Nữ</string>
+    <string name="rb_other">Khác</string>
+    <string name="rb_urban">Đô Thị</string>
+    <string name="rb_rural">Nông Thôn</string>
+
+    <string name="gender">Giới Tính</string>
+    <string name="age">Tuổi</string>
+    <string name="bmi">BMI</string>
+    <string name="glucose">Chỉ Số Đường Huyết</string>
+    <string name="work_type">Loại Công Việc</string>
+    <string name="residence">Khu Vực sống</string>
+    <string name="hypertension">Bệnh Tăng Huyết Áp</string>
+    <string name="heart_disease">Bệnh Tim Mạch</string>
+    <string name="ever_married">Bạn Đã Kết Hôn Chưa</string>
+    <string name="smoking_status">Hút Thuốc</string>
+
+    <string name="result_predict_image">Kết Quả Dự Đoán</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

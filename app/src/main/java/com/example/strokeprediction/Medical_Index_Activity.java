@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class Medical_Index_Activity extends AppCompatActivity {
 
-    String url = "https://8320-112-197-193-229.ngrok-free.app/predict";
+    String url = "https://0089-112-197-193-229.ngrok-free.app/predict";
     EditText etAge, etBmi, etGlucose;
     String genderMale = "0";
     String genderOther = "0";
@@ -95,7 +95,7 @@ public class Medical_Index_Activity extends AppCompatActivity {
         arrayWorkType.add("Tư nhân");
         arrayWorkType.add("Thất nghiệp");
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item,arrayWorkType);
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, arrayWorkType);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spnWorkType.setAdapter(arrayAdapter);
 

@@ -1,5 +1,6 @@
 package com.example.strokeprediction.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,7 +14,10 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import com.example.strokeprediction.Medical_Image_Activity;
+import com.example.strokeprediction.Medical_Index_Activity;
 import com.example.strokeprediction.R;
 import com.example.strokeprediction.fragment.predict.PredictViewPageAdapter;
 import com.google.android.material.tabs.TabLayout;
@@ -66,31 +70,33 @@ public class PredictFragment extends Fragment {
         }
     }
 
-    private TabLayout tabLayout;
-    private ViewPager2 viewPagerFrgPredict;
-    private View view;
+    Button btnPredictIndex;
+    Button btnPredictImage;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_predict, container, false);
+        View view = inflater.inflate(R.layout.fragment_predict, container, false);
 
-        tabLayout = view.findViewById(R.id.tab_layout);
-        viewPagerFrgPredict = view.findViewById(R.id.view_page_frg_predict);
+        btnPredictIndex = view.findViewById(R.id.btn_predict_index);
+        btnPredictImage = view.findViewById(R.id.btn_predict_image);
 
-        PredictViewPageAdapter predictViewPageAdapter = new PredictViewPageAdapter(this);
-        viewPagerFrgPredict.setAdapter(predictViewPageAdapter);
-
-        new TabLayoutMediator(tabLayout, viewPagerFrgPredict, (tab, position) -> {
-            switch (position) {
-                case 0:
-                    tab.setText("Index");
-                    break;
-                case 1:
-                    tab.setText("Image");
-                    break;
+        btnPredictIndex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentIndex = new Intent(view.getContext(), Medical_Index_Activity.class);
+                startActivity(intentIndex);
             }
-        }).attach();
+        });
+
+        btnPredictImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentImage = new Intent(view.getContext(), Medical_Image_Activity.class);
+                startActivity(intentImage);
+            }
+        });
+
         return view;
     }
 }
