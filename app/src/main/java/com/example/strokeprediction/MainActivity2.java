@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -67,5 +68,21 @@ public class MainActivity2 extends AppCompatActivity {
                 return true;
             }
         });
+
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+        int library = bundle.getInt("library",0);
+        int user = bundle.getInt("user",0);
+        int bmi = bundle.getInt("bmi",0);
+
+        if (library == 2) {
+            viewPager2.setCurrentItem(2);
+        }
+        if (user == 3) {
+            viewPager2.setCurrentItem(3);
+        }
+        if (bmi == 4) {
+            viewPager2.setCurrentItem(4);
+        }
     }
 }

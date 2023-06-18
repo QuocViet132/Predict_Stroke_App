@@ -2,6 +2,8 @@ package com.example.strokeprediction;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,6 +22,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.ekn.gruzer.gaugelibrary.HalfGauge;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,7 +33,7 @@ import java.util.Map;
 
 public class Medical_Index_Activity extends AppCompatActivity {
 
-    String url = "https://0089-112-197-193-229.ngrok-free.app/predict";
+    String url = "https://26c5-112-197-193-112.ngrok-free.app/predict";
     EditText etAge, etBmi, etGlucose;
     String genderMale = "0";
     String genderOther = "0";
@@ -56,7 +59,16 @@ public class Medical_Index_Activity extends AppCompatActivity {
     String glucoseCatHigh = "0";
     String glucoseCatVeryHigh = "0";
     Button btnPredict;
-    TextView tvResult;
+    TextView tvResult, tvAnalysisAge, tvAnalysisBmi, tvAnalysisGlucose;
+
+    RadioButton rbGenderMale, rbGenderFemale, rbGenderOther, rbRural, rbUrban, rbYesMarried, rbNoMarried;
+    RadioButton rbYesHypertension, rbNoHypertension, rbYesHeartDisease, rbNoHeartDisease;
+    RadioButton rbNeverSmoked, rbFormerlySmoked, rbSmoked;
+    HalfGauge halfGauge_age, halfGauge_bmi, halfGauge_glucose;
+
+    com.ekn.gruzer.gaugelibrary.Range rangeChildren, rangeTeens, rangeAdults, rangeMidAdults, rangeElderly;
+    com.ekn.gruzer.gaugelibrary.Range rangeUnderWeight, rangeIdeal, rangeOverWeight, rangeObesity;
+    com.ekn.gruzer.gaugelibrary.Range rangeLowGlucose ,rangeNormalGlucose, rangeHighGlucose, rangeVeryHighGlucose;
 
     public void resetAgeCat() {
         ageCatTeens = "0";
@@ -75,11 +87,97 @@ public class Medical_Index_Activity extends AppCompatActivity {
         glucoseCatHigh = "0";
         glucoseCatVeryHigh = "0";
     }
+    public void setHalfGauge_age(int halfGaugeAge) {
+        rangeChildren = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeTeens = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeAdults = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeMidAdults = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeElderly = new com.ekn.gruzer.gaugelibrary.Range();
 
+        rangeChildren.setFrom(0); rangeChildren.setTo(13);
+        rangeTeens.setFrom(13); rangeTeens.setTo(18);
+        rangeAdults.setFrom(18); rangeAdults.setTo(45);
+        rangeMidAdults.setFrom(45); rangeMidAdults.setTo(60);
+        rangeElderly.setFrom(60); rangeElderly.setTo(150);
+
+        rangeChildren.setColor(Color.parseColor("#4285f4"));
+        rangeTeens.setColor(Color.parseColor("#34A853"));
+        rangeAdults.setColor(Color.parseColor("#FBBC05"));
+        rangeMidAdults.setColor(Color.parseColor("#E50914"));
+        rangeElderly.setColor(Color.parseColor("#232F3E"));
+
+        halfGauge_age.addRange(rangeChildren);
+        halfGauge_age.addRange(rangeTeens);
+        halfGauge_age.addRange(rangeAdults);
+        halfGauge_age.addRange(rangeMidAdults);
+        halfGauge_age.addRange(rangeElderly);
+
+        halfGauge_age.setMinValue(0);
+        halfGauge_age.setMaxValue(150);
+        halfGauge_age.setValue(halfGaugeAge);
+    }
+
+    public void setHalfGauge_bmi(double halfGaugeBmi) {
+        rangeUnderWeight = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeIdeal = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeOverWeight = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeObesity = new com.ekn.gruzer.gaugelibrary.Range();
+
+        rangeUnderWeight.setFrom(0); rangeUnderWeight.setTo(19);
+        rangeIdeal.setFrom(19); rangeIdeal.setTo(25);
+        rangeOverWeight.setFrom(25); rangeOverWeight.setTo(30);
+        rangeObesity.setFrom(30); rangeObesity.setTo(83);
+
+        rangeUnderWeight.setColor(Color.parseColor("#4285f4"));
+        rangeIdeal.setColor(Color.parseColor("#34A853"));
+        rangeOverWeight.setColor(Color.parseColor("#FBBC05"));
+        rangeObesity.setColor(Color.parseColor("#E50914"));
+
+        halfGauge_bmi.addRange(rangeUnderWeight);
+        halfGauge_bmi.addRange(rangeIdeal);
+        halfGauge_bmi.addRange(rangeOverWeight);
+        halfGauge_bmi.addRange(rangeObesity);
+
+        halfGauge_bmi.setMinValue(0);
+        halfGauge_bmi.setMaxValue(83);
+        halfGauge_bmi.setValue(halfGaugeBmi);
+    }
+    public void setHalfGauge_glucose(double halfGaugeGlucose) {
+        rangeLowGlucose = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeNormalGlucose = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeHighGlucose = new com.ekn.gruzer.gaugelibrary.Range();
+        rangeVeryHighGlucose = new com.ekn.gruzer.gaugelibrary.Range();
+
+        rangeLowGlucose.setFrom(0); rangeLowGlucose.setTo(90);
+        rangeNormalGlucose.setFrom(90); rangeNormalGlucose.setTo(160);
+        rangeHighGlucose.setFrom(160); rangeHighGlucose.setTo(230);
+        rangeVeryHighGlucose.setFrom(230); rangeVeryHighGlucose.setTo(380);
+
+        rangeLowGlucose.setColor(Color.parseColor("#4285f4"));
+        rangeNormalGlucose.setColor(Color.parseColor("#34A853"));
+        rangeHighGlucose.setColor(Color.parseColor("#FBBC05"));
+        rangeVeryHighGlucose.setColor(Color.parseColor("#E50914"));
+
+        halfGauge_glucose.addRange(rangeLowGlucose);
+        halfGauge_glucose.addRange(rangeNormalGlucose);
+        halfGauge_glucose.addRange(rangeHighGlucose);
+        halfGauge_glucose.addRange(rangeVeryHighGlucose);
+
+        halfGauge_glucose.setMinValue(0);
+        halfGauge_glucose.setMaxValue(380);
+        halfGauge_glucose.setValue(halfGaugeGlucose);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_index);
+        try {
+            Intent intentLinkApi = getIntent();
+            url = intentLinkApi.getStringExtra("LinkApi");
+            Log.d("url",url);
+        } catch (Exception NullPointerException) {
+            Toast.makeText(Medical_Index_Activity.this,"URL Default",Toast.LENGTH_SHORT).show();
+        }
 
         etAge = (EditText) findViewById(R.id.et_age);
         etBmi = (EditText) findViewById(R.id.et_bmi);
@@ -146,24 +244,29 @@ public class Medical_Index_Activity extends AppCompatActivity {
             }
         });
 
-        RadioButton rbGenderMale, rbGenderFemale, rbGenderOther, rbRural, rbUrban, rbYesMarried, rbNoMarried;
-        RadioButton rbYesHypertension, rbNoHypertension, rbYesHeartDisease, rbNoHeartDisease;
-        RadioButton rbNeverSmoked, rbFormerlySmoked, rbSmoked;
+        halfGauge_age = findViewById(R.id.halfGauge_age);
+        halfGauge_bmi = findViewById(R.id.halfGauge_bmi);
+        halfGauge_glucose = findViewById(R.id.halfGauge_glucose);
+        halfGauge_glucose = findViewById(R.id.halfGauge_glucose);
 
-        rbGenderMale = (RadioButton) findViewById(R.id.rb_gender_male);
-        rbGenderFemale = (RadioButton) findViewById(R.id.rb_gender_female);
-        rbGenderOther = (RadioButton) findViewById(R.id.rb_gender_other);
-        rbRural = (RadioButton) findViewById(R.id.rb_rural);
-        rbUrban = (RadioButton) findViewById(R.id.rb_urban);
-        rbYesMarried = (RadioButton) findViewById(R.id.rb_yes_married);
-        rbNoMarried = (RadioButton) findViewById(R.id.rb_no_married);
-        rbYesHypertension = (RadioButton) findViewById(R.id.rb_yes_hypertension);
-        rbNoHypertension = (RadioButton) findViewById(R.id.rb_no_hypertension);
-        rbYesHeartDisease = (RadioButton) findViewById(R.id.rb_yes_heart_disease);
-        rbNoHeartDisease = (RadioButton) findViewById(R.id.rb_no_heart_disease);
-        rbNeverSmoked = (RadioButton) findViewById(R.id.rb_never_smoked);
-        rbFormerlySmoked = (RadioButton) findViewById(R.id.rb_formerly_smoked);
-        rbSmoked = (RadioButton) findViewById(R.id.rb_smoked);
+        tvAnalysisAge = findViewById(R.id.tv_analysis_age);
+        tvAnalysisBmi = findViewById(R.id.tv_analysis_bmi);
+        tvAnalysisGlucose = findViewById(R.id.tv_analysis_glucose);
+
+        rbGenderMale = findViewById(R.id.rb_gender_male);
+        rbGenderFemale =  findViewById(R.id.rb_gender_female);
+        rbGenderOther = findViewById(R.id.rb_gender_other);
+        rbRural = findViewById(R.id.rb_rural);
+        rbUrban = findViewById(R.id.rb_urban);
+        rbYesMarried = findViewById(R.id.rb_yes_married);
+        rbNoMarried = findViewById(R.id.rb_no_married);
+        rbYesHypertension = findViewById(R.id.rb_yes_hypertension);
+        rbNoHypertension = findViewById(R.id.rb_no_hypertension);
+        rbYesHeartDisease = findViewById(R.id.rb_yes_heart_disease);
+        rbNoHeartDisease = findViewById(R.id.rb_no_heart_disease);
+        rbNeverSmoked = findViewById(R.id.rb_never_smoked);
+        rbFormerlySmoked = findViewById(R.id.rb_formerly_smoked);
+        rbSmoked = findViewById(R.id.rb_smoked);
 
         tvResult = findViewById(R.id.tv_result);
         btnPredict = findViewById(R.id.btn_predict);
@@ -228,22 +331,27 @@ public class Medical_Index_Activity extends AppCompatActivity {
                 }
                 if(Integer.parseInt(etAge.getText().toString()) >= 0 && Integer.parseInt(etAge.getText().toString()) <= 12){
                     resetAgeCat();
+                    tvAnalysisAge.setText(getResources().getString(R.string.advice_for_age_children));
                 }
                 if(Integer.parseInt(etAge.getText().toString()) > 12 && Integer.parseInt(etAge.getText().toString()) <= 17){
                     resetAgeCat();
                     ageCatTeens = "1";
+                    tvAnalysisAge.setText(getResources().getString(R.string.advice_for_age_teens));
                 }
                 if(Integer.parseInt(etAge.getText().toString()) > 17 && Integer.parseInt(etAge.getText().toString()) <= 44){
                     resetAgeCat();
                     ageCatAdults = "1";
+                    tvAnalysisAge.setText(getResources().getString(R.string.advice_for_age_adults));
                 }
                 if(Integer.parseInt(etAge.getText().toString()) > 44 && Integer.parseInt(etAge.getText().toString()) <= 59){
                     resetAgeCat();
                     ageCatMidAdults = "1";
+                    tvAnalysisAge.setText(getResources().getString(R.string.advice_for_age_mid_adults));
                 }
                 if(Integer.parseInt(etAge.getText().toString()) > 59 && Integer.parseInt(etAge.getText().toString()) <= 200){
                     resetAgeCat();
                     ageCatElderly = "1";
+                    tvAnalysisAge.setText(getResources().getString(R.string.advice_for_age_elderly));
                 }
 
                 if(Double.parseDouble(etBmi.getText().toString()) < 0 || Double.parseDouble(etBmi.getText().toString()) > 10000){
@@ -251,18 +359,22 @@ public class Medical_Index_Activity extends AppCompatActivity {
                 }
                 if(Double.parseDouble(etBmi.getText().toString()) >= 0 && Double.parseDouble(etBmi.getText().toString()) <= 18){
                     resetBmiCat();
+                    tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_underweight));
                 }
                 if(Double.parseDouble(etBmi.getText().toString()) > 18 && Double.parseDouble(etBmi.getText().toString()) <= 24){
                     resetBmiCat();
                     bmiCatIdeal = "1";
+                    tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_ideal));
                 }
                 if(Double.parseDouble(etBmi.getText().toString()) > 24 && Double.parseDouble(etBmi.getText().toString()) <= 29){
                     resetBmiCat();
                     bmiCatOverweight = "1";
+                    tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_overweight));
                 }
                 if(Double.parseDouble(etBmi.getText().toString()) > 29 && Double.parseDouble(etBmi.getText().toString()) <= 10000){
                     resetBmiCat();
                     bmiCatObesity = "1";
+                    tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_obesity));
                 }
 
                 if(Double.parseDouble(etGlucose.getText().toString()) < 0 || Double.parseDouble(etGlucose.getText().toString()) > 500){
@@ -270,18 +382,22 @@ public class Medical_Index_Activity extends AppCompatActivity {
                 }
                 if(Double.parseDouble(etGlucose.getText().toString()) >= 0 && Double.parseDouble(etGlucose.getText().toString()) <= 89){
                     resetGlucoseCat();
+                    tvAnalysisGlucose.setText(getResources().getString(R.string.advice_for_glucose_low));
                 }
                 if(Double.parseDouble(etGlucose.getText().toString()) > 89 && Double.parseDouble(etGlucose.getText().toString()) <= 159){
                     resetGlucoseCat();
                     glucoseCatNormal = "1";
+                    tvAnalysisGlucose.setText(getResources().getString(R.string.advice_for_glucose_normal));
                 }
                 if(Double.parseDouble(etGlucose.getText().toString()) > 159 && Double.parseDouble(etGlucose.getText().toString()) <= 229){
                     resetGlucoseCat();
                     glucoseCatHigh = "1";
+                    tvAnalysisGlucose.setText(getResources().getString(R.string.advice_for_glucose_high));
                 }
                 if(Double.parseDouble(etGlucose.getText().toString()) > 229 && Double.parseDouble(etGlucose.getText().toString()) <= 500){
                     resetGlucoseCat();
                     glucoseCatVeryHigh = "1";
+                    tvAnalysisGlucose.setText(getResources().getString(R.string.advice_for_glucose_veryhigh));
                 }
 
                 // hit the API -> Volley
@@ -374,6 +490,11 @@ public class Medical_Index_Activity extends AppCompatActivity {
                 Log.d("glucoseCatHigh",glucoseCatHigh);
                 Log.d("glucoseCatVeryHigh",glucoseCatVeryHigh);
 */
+
+                setHalfGauge_age(Integer.parseInt(etAge.getText().toString()));
+                setHalfGauge_bmi(Double.parseDouble(etBmi.getText().toString()));
+                setHalfGauge_glucose(Double.parseDouble(etGlucose.getText().toString()));
+
             }
         });
     }

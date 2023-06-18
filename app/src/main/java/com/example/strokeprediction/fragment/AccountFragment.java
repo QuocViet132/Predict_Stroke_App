@@ -1,13 +1,18 @@
 package com.example.strokeprediction.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
+import com.example.strokeprediction.Medical_Index_Activity;
 import com.example.strokeprediction.R;
 
 /**
@@ -57,10 +62,29 @@ public class AccountFragment extends Fragment {
         }
     }
 
+    EditText etLinkApi;
+    Button btnInsert;
+    String linkApi;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_account, container, false);
+        View view = inflater.inflate(R.layout.fragment_account, container, false);
+
+        etLinkApi = view.findViewById(R.id.et_api);
+        btnInsert = view.findViewById(R.id.btn_insert_link);
+
+        btnInsert.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                linkApi = etLinkApi.getText().toString() + "/predict";
+                Intent intentLinkApi= new Intent(view.getContext(), Medical_Index_Activity.class);
+                intentLinkApi.putExtra("LinkApi",linkApi);
+                startActivity(intentLinkApi);
+                Log.d("Link API", linkApi);
+            }
+        });
+
+        return view;
     }
 }

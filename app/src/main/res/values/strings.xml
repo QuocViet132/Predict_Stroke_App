@@ -8,6 +8,38 @@
     <string name="btn_predict_image">Dự Đoán Bằng Hình Ảnh</string>
     <string name="btn_take_photo">Chụp Ảnh</string>
     <string name="btn_launch_gallery">Lấy Ảnh Từ Thư Viện</string>
+    <string name="btn_fr_calculator_bmi_save">Lưu</string>
+
+    <string name="et_hit_age">18</string>
+    <string name="et_hit_bmi">20</string>
+    <string name="et_hit_glucose">100</string>
+
+    <string name="tv_home">TRANG CHỦ</string>
+    <string name="tv_fr_calculator_bmi_title">CHỈ SỐ KHỐI CƠ THỂ</string>
+    <string name="tv_fr_calculator_bmi_add">Thêm mẫu</string>
+    <string name="tv_fr_calculator_bmi_height">Chiều cao</string>
+    <string name="tv_fr_calculator_bmi_weight">Cân nặng</string>
+    <string name="tv_fr_calculator_bmi_day_create">Ngày tạo</string>
+    <string name="tv_fr_home_card_index">CHỈ SỐ</string>
+    <string name="tv_fr_home_card_image">HÌNH ẢNH</string>
+    <string name="tv_fr_home_card_library">CẨM NANG</string>
+    <string name="tv_fr_home_card_calender">ĐẶT LỊCH</string>
+    <string name="tv_fr_home_card_user">CÁ NHÂN</string>
+    <string name="tv_fr_home_card_bmi">TÍNH BMI</string>
+    <string name="tv_analysis_result">* Phân tích kết quả chi tiết:</string>
+    <string name="tv_children">Trẻ Em (0-13)</string>
+    <string name="tv_teens">Thiếu Niên (13-18)</string>
+    <string name="tv_adult">Trưởng Thành (18-45)</string>
+    <string name="tv_mid_adult">Trung Niên (45-60)</string>
+    <string name="tv_elderly">Cao Tuổi (>60)</string>
+    <string name="tv_underweight">Thiếu Cân (0-18)</string>
+    <string name="tv_ideal">Lý tưởng (18-25)</string>
+    <string name="tv_overweight">Thừa Cân (25-30)</string>
+    <string name="tv_obesity">Béo Phì (>30)</string>
+    <string name="tv_glucose_low">Thấp (0-90)</string>
+    <string name="tv_glucose_normal">Lý Tưởng (90-160)</string>
+    <string name="tv_glucose_high">Cao (160-230)</string>
+    <string name="tv_glucose_very_high">Rất Cao (>230)</string>
 
     <string name="rb_yes">có</string>
     <string name="rb_no">Không</string>
@@ -31,4 +63,34 @@
 
     <string name="result_predict_image">Kết Quả Dự Đoán</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="advice_for_age_children">Bạn đang trong độ tuổi trẻ em. Nguy cơ mắc đột quỵ là khá hiếm.</string>
+    <string name="advice_for_age_teens">Bạn đang trong độ tuổi thiếu niên. Nguy cơ mắc đột quỵ là rất ít.</string>
+    <string name="advice_for_age_adults">Bạn thuộc nhóm tuổi trưởng thành. Ở độ tuổi này ít khi bị đột quỵ,
+                                         tỉ lệ nữ giới bị đột quỵ ở độ tuổi này cao hơn nam giới.</string>
+    <string name="advice_for_age_mid_adults">Bạn thuộc nhóm tuổi trung niên. Đây là nhóm tuổi
+                                                có khả năng bị đột quỵ. Hãy thường xuyên theo dõi
+                                                sức khỏe của bạn.</string>
+    <string name="advice_for_age_elderly">Bạn thuộc nhóm người cao tuổi. Ở độ tuổi này rất
+                                          dễ mắc đột quỵ. Hãy thường xuyên theo dõi tình trạng
+                                          sức khỏe của bạn.\n</string>
+
+    <string name="advice_for_bmi_underweight">Bạn đang trong tình trạng thiếu cân. Hãy bổ sung
+                                                thêm dinh dưỡng cho cơ thể để cải thiện cân nặng.
+                                                Một số lời khuyên hữu ích: ăn nhiều bữa nhỏ mỗi,
+                                                ngày (5-6 bữa), chọn thực phẩm giàu đạm, tinh bột,
+                                                vitamin và khoáng chất, ngủ đủ giấc.</string>
+    <string name="advice_for_bmi_ideal">Cân nặng hiện tại của bạn đang ở mức tuyệt vời.
+                                        Hãy tiếp tục duy trì cân nặng của bạn.</string>
+    <string name="advice_for_bmi_overweight">Bạn đang trong tình trạng thừa cân. Hãy tăng cường tập thể dục và điều chỉnh lại chế độ ăn uống.</string>
+    <string name="advice_for_bmi_obesity">Bạn đang bị béo phì. Hãy tích cực tập thể dục thường xuyên (tối thiểu 30 phút mỗi ngày).
+                                            Điều chỉnh lại chế độ ăn uống: Hạn chế sử dụng thực phẩm giàu chất béo và chất bột đường.
+                                            Nên sử dụng trái cây và rau củ theo khuyến nghị.</string>
+
+    <string name="advice_for_glucose_low">Mức đường huyết trung bình của bạn đang ở mức thấp. Hãy bổ sung thêm đường cho cơ thể.</string>
+    <string name="advice_for_glucose_normal">Chỉ số đường huyết trung bình tuyệt vời.</string>
+    <string name="advice_for_glucose_high">Chỉ số đường huyết trung bình của bạn đang ở mức cao. Hãy điều chỉnh lại chế độ ăn uống của bạn.</string>
+    <string name="advice_for_glucose_veryhigh">Mức đường huyết trung bình của bạn quá cao. Hãy hạn chế ăn thực phẩm chứa nhiều tinh bột như khoai tây, cơm trắng
+                                                ... Tích cực uống nhiều nước lọc. Tập luyện thể thao đều đặn.</string>
 </resources>
