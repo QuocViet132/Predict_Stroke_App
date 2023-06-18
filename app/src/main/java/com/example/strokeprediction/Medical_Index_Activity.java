@@ -69,6 +69,8 @@ public class Medical_Index_Activity extends AppCompatActivity {
     com.ekn.gruzer.gaugelibrary.Range rangeChildren, rangeTeens, rangeAdults, rangeMidAdults, rangeElderly;
     com.ekn.gruzer.gaugelibrary.Range rangeUnderWeight, rangeIdeal, rangeOverWeight, rangeObesity;
     com.ekn.gruzer.gaugelibrary.Range rangeLowGlucose ,rangeNormalGlucose, rangeHighGlucose, rangeVeryHighGlucose;
+    int halfGaugeAge = 0;
+    double halfGaugeBmi = 0, halfGaugeGlucose = 0;
 
     public void resetAgeCat() {
         ageCatTeens = "0";

@@ -29,7 +29,6 @@
             >
 
             <TextView
-                android:id="@+id/tv_api"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Link API:"

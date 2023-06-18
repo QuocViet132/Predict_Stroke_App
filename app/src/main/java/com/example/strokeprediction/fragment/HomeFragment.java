@@ -5,19 +5,16 @@ import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager2.widget.ViewPager2;
 
-import android.text.style.BulletSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.strokeprediction.Calculator_Bmi_Activity;
 import com.example.strokeprediction.MainActivity2;
 import com.example.strokeprediction.Medical_Image_Activity;
 import com.example.strokeprediction.Medical_Index_Activity;
 import com.example.strokeprediction.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -99,10 +96,6 @@ public class HomeFragment extends Fragment {
         cardLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-//                fragmentTransaction.add(R.id.fragment_home, new LibraryFragment());
-//                fragmentTransaction.addToBackStack(null);
-//                fragmentTransaction.commit();
                 Intent intent = new Intent(view.getContext(), MainActivity2.class);
                 Bundle bundle = new Bundle();
 
@@ -115,26 +108,14 @@ public class HomeFragment extends Fragment {
         cardBmi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction();
-//                fragmentTransaction.replace(R.id.fragment_home, new CalculatorBmiFragment());
-//                fragmentTransaction.addToBackStack(null);
-//                fragmentTransaction.commit();
-                Intent intent = new Intent(view.getContext(), MainActivity2.class);
-                Bundle bundle = new Bundle();
-
-                bundle.putInt("bmi",4);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                Intent intentBmi = new Intent(view.getContext(), Calculator_Bmi_Activity.class);
+                startActivity(intentBmi);
             }
         });
 
         cardUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-//                fragmentTransaction.add(R.id.fragment_home, new AccountFragment());
-//                fragmentTransaction.addToBackStack(null);
-//                fragmentTransaction.commit();
                 Intent intent = new Intent(view.getContext(), MainActivity2.class);
                 Bundle bundle = new Bundle();
 

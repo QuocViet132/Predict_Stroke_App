@@ -4,22 +4,23 @@
     <string name="ttl_index">Stroke Prediction</string>
 
     <string name="btn_predict">DỰ ĐOÁN</string>
-    <string name="btn_predict_index"> Dự Đoán Bằng Chỉ Số </string>
-    <string name="btn_predict_image">Dự Đoán Bằng Hình Ảnh</string>
+    <string name="btn_predict_index">Chỉ Số</string>
+    <string name="btn_predict_image">Hình Ảnh</string>
     <string name="btn_take_photo">Chụp Ảnh</string>
     <string name="btn_launch_gallery">Lấy Ảnh Từ Thư Viện</string>
-    <string name="btn_fr_calculator_bmi_save">Lưu</string>
+    <string name="btn_calculator_bmi_save">Lưu</string>
 
     <string name="et_hit_age">18</string>
     <string name="et_hit_bmi">20</string>
     <string name="et_hit_glucose">100</string>
 
     <string name="tv_home">TRANG CHỦ</string>
-    <string name="tv_fr_calculator_bmi_title">CHỈ SỐ KHỐI CƠ THỂ</string>
-    <string name="tv_fr_calculator_bmi_add">Thêm mẫu</string>
-    <string name="tv_fr_calculator_bmi_height">Chiều cao</string>
-    <string name="tv_fr_calculator_bmi_weight">Cân nặng</string>
-    <string name="tv_fr_calculator_bmi_day_create">Ngày tạo</string>
+    <string name="tv_predict">DỰ ĐOÁN</string>
+    <string name="tv_library">CẨM NANG</string>
+    <string name="tv_calculator_bmi_title">CHỈ SỐ KHỐI CƠ THỂ</string>
+    <string name="tv_calculator_bmi_height">Chiều cao</string>
+    <string name="tv_calculator_bmi_weight">Cân nặng</string>
+    <string name="tv_calculator_bmi_day_create">Ngày tạo</string>
     <string name="tv_fr_home_card_index">CHỈ SỐ</string>
     <string name="tv_fr_home_card_image">HÌNH ẢNH</string>
     <string name="tv_fr_home_card_library">CẨM NANG</string>
@@ -62,7 +63,6 @@
     <string name="smoking_status">Hút Thuốc</string>
 
     <string name="result_predict_image">Kết Quả Dự Đoán</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
     <string name="advice_for_age_children">Bạn đang trong độ tuổi trẻ em. Nguy cơ mắc đột quỵ là khá hiếm.</string>

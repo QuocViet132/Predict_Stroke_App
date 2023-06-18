@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/rb_no"
                     android:textSize="17sp"
-                    android:layout_marginStart="15sp"
+                    android:layout_marginStart="16sp"
                     android:layout_marginEnd="10sp"/>
             </RadioGroup>
         </LinearLayout>
@@ -183,7 +183,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/rb_no"
                     android:textSize="17sp"
-                    android:layout_marginStart="15sp"
+                    android:layout_marginStart="16sp"
                     android:layout_marginEnd="10sp"/>
             </RadioGroup>
         </LinearLayout>
@@ -633,7 +633,6 @@
                 />
         </LinearLayout>
         <LinearLayout
-            android:id="@+id/analysis_glucose"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"

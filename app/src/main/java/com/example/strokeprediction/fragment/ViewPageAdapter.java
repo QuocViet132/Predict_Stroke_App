@@ -21,8 +21,6 @@ public class ViewPageAdapter extends FragmentStateAdapter {
                 return new LibraryFragment();
             case 3:
                 return new AccountFragment();
-            case 4:
-                return new CalculatorBmiFragment();
             case 0:
             default:
                 return new HomeFragment();
@@ -31,6 +29,6 @@ public class ViewPageAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 5;
+        return 4;
     }
 }

@@ -19,7 +19,6 @@ import android.widget.Button;
 import com.example.strokeprediction.Medical_Image_Activity;
 import com.example.strokeprediction.Medical_Index_Activity;
 import com.example.strokeprediction.R;
-import com.example.strokeprediction.fragment.predict.PredictViewPageAdapter;
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
 
