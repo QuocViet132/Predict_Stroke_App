@@ -28,8 +28,8 @@ public class Calculator_Bmi_Activity extends AppCompatActivity {
         rangeOverWeight = new com.ekn.gruzer.gaugelibrary.Range();
         rangeObesity = new com.ekn.gruzer.gaugelibrary.Range();
 
-        rangeUnderWeight.setFrom(0); rangeUnderWeight.setTo(19);
-        rangeIdeal.setFrom(19); rangeIdeal.setTo(25);
+        rangeUnderWeight.setFrom(0); rangeUnderWeight.setTo(18);
+        rangeIdeal.setFrom(18); rangeIdeal.setTo(25);
         rangeOverWeight.setFrom(25); rangeOverWeight.setTo(30);
         rangeObesity.setFrom(30); rangeObesity.setTo(83);
 
@@ -67,7 +67,7 @@ public class Calculator_Bmi_Activity extends AppCompatActivity {
                 bmi = weight / (height * height);
                 bmi = (double) Math.round(bmi);
 
-                result = etDayCreate.getText().toString() + ":\t\tBMI = " + bmi;
+                result = etDayCreate.getText().toString() + " \t\tBMI = " + bmi;
                 tvResult.setText(result);
 
                 setHalfGauge_bmi(bmi);

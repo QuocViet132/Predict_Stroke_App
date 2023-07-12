@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">StrokePrediction</string>
+    <string name="app_name">PredictStroke</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="ttl_index">Stroke Prediction</string>
+    <string name="ttl_index">Dự Đoán Đột Quỵ</string>
 
     <string name="btn_predict">DỰ ĐOÁN</string>
     <string name="btn_predict_index">Chỉ Số</string>
@@ -17,6 +17,7 @@
     <string name="tv_home">TRANG CHỦ</string>
     <string name="tv_predict">DỰ ĐOÁN</string>
     <string name="tv_library">CẨM NANG</string>
+    <string name="tv_infor_title">THÔNG TIN</string>
     <string name="tv_calculator_bmi_title">CHỈ SỐ KHỐI CƠ THỂ</string>
     <string name="tv_calculator_bmi_height">Chiều cao</string>
     <string name="tv_calculator_bmi_weight">Cân nặng</string>
@@ -24,7 +25,7 @@
     <string name="tv_fr_home_card_index">CHỈ SỐ</string>
     <string name="tv_fr_home_card_image">HÌNH ẢNH</string>
     <string name="tv_fr_home_card_library">CẨM NANG</string>
-    <string name="tv_fr_home_card_calender">ĐẶT LỊCH</string>
+    <string name="tv_fr_home_card_information">THÔNG TIN</string>
     <string name="tv_fr_home_card_user">CÁ NHÂN</string>
     <string name="tv_fr_home_card_bmi">TÍNH BMI</string>
     <string name="tv_analysis_result">* Phân tích kết quả chi tiết:</string>
@@ -32,15 +33,24 @@
     <string name="tv_teens">Thiếu Niên (13-18)</string>
     <string name="tv_adult">Trưởng Thành (18-45)</string>
     <string name="tv_mid_adult">Trung Niên (45-60)</string>
-    <string name="tv_elderly">Cao Tuổi (>60)</string>
+    <string name="tv_elderly">Cao Tuổi (>=60)</string>
     <string name="tv_underweight">Thiếu Cân (0-18)</string>
     <string name="tv_ideal">Lý tưởng (18-25)</string>
     <string name="tv_overweight">Thừa Cân (25-30)</string>
-    <string name="tv_obesity">Béo Phì (>30)</string>
+    <string name="tv_obesity">Béo Phì (>=30)</string>
     <string name="tv_glucose_low">Thấp (0-90)</string>
     <string name="tv_glucose_normal">Lý Tưởng (90-160)</string>
     <string name="tv_glucose_high">Cao (160-230)</string>
-    <string name="tv_glucose_very_high">Rất Cao (>230)</string>
+    <string name="tv_glucose_very_high">Rất Cao (>=230)</string>
+    <string name="tv_introduce">Giới thiệu</string>
+    <string name="tv_link_web">Link web</string>
+    <string name="tv_click_link_web">Truy cập ứng dụng trên website</string>
+    <string name="tv_language_code">Ngôn ngữ lập trình sử dụng</string>
+    <string name="tv_java">JAVA</string>
+    <string name="tv_python">PYTHON</string>
+    <string name="tv_version">Phiên bản</string>
+    <string name="tv_num_version">1.0.0</string>
+    <string name="tv_author">Tác giả</string>
 
     <string name="rb_yes">có</string>
     <string name="rb_no">Không</string>

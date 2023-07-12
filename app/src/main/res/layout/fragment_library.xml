@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,74 +9,68 @@
     android:background="@color/color_app">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/tv_fr_library_title"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tv_library"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
+        android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_library_consequences_stroke"
-        android:layout_width="380dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="5dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="2dp"
-        app:cardUseCompatPadding="true">
+        <TextView
+            android:id="@+id/tv_fr_library_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_library"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="115dp"
+            android:layout_marginTop="25dp"/>
 
-    </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="880dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/consequences_of_stroke"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_library_detect_stroke"
-        android:layout_width="380dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="5dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="2dp"
-        app:cardUseCompatPadding="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/overreviewone"/>
 
-    </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1060dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/dotquy" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_library_first_aid"
-        android:layout_width="380dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="5dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="2dp"
-        app:cardUseCompatPadding="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="575dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/detect_stroke"/>
 
-    </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/first_aid"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_library_prevention"
-        android:layout_width="380dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="5dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="2dp"
-        app:cardUseCompatPadding="true">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="445dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/first_aid_two"/>
 
-    </androidx.cardview.widget.CardView>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/first_aid_three"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_library_overview"
-        android:layout_width="380dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="5dp"
-        app:cardCornerRadius="15dp"
-        app:cardElevation="2dp"
-        app:cardUseCompatPadding="true">
-
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="445dp"
+            android:importantForAccessibility="no"
+            android:src="@drawable/first_aid_four"/>
+    </LinearLayout>
+</ScrollView>

@@ -8,8 +8,10 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.strokeprediction.fragment.ViewPageAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -52,27 +54,31 @@ public class MainActivity2 extends AppCompatActivity {
             }
         });
 
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int itemId = item.getItemId();
-                if (itemId == R.id.menu_home) {
-                    viewPager2.setCurrentItem(0);
-                } else if (itemId == R.id.menu_predict) {
-                    viewPager2.setCurrentItem(1);
-                } else if (itemId == R.id.menu_library) {
-                    viewPager2.setCurrentItem(2);
-                } else if (itemId == R.id.menu_account) {
-                    viewPager2.setCurrentItem(3);
-                }
-                return true;
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.menu_home) {
+                viewPager2.setCurrentItem(0);
+            } else if (itemId == R.id.menu_predict) {
+                viewPager2.setCurrentItem(1);
+            } else if (itemId == R.id.menu_library) {
+                viewPager2.setCurrentItem(2);
+            } else if (itemId == R.id.menu_account) {
+                viewPager2.setCurrentItem(3);
             }
+            return true;
         });
-
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        int library = bundle.getInt("library",0);
-        int user = bundle.getInt("user",0);
+        int library;
+        int user;
+        try {
+            Intent intent = getIntent();
+            Bundle bundle = intent.getExtras();
+            library = bundle.getInt("library",0);
+            user = bundle.getInt("user",0);
+        } catch (Exception NullPointerException) {
+//            Toast.makeText(MainActivity2.this,"Not Bundle",Toast.LENGTH_SHORT).show();
+            library = 0;
+            user = 0;
+        }
 
         if (library == 2) {
             viewPager2.setCurrentItem(2);

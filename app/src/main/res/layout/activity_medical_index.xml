@@ -512,7 +512,7 @@
                         android:layout_marginTop="15sp"
                         android:layout_marginStart= "10sp"
                         android:text="@string/tv_mid_adult"
-                        android:textSize="15sp"
+                        android:textSize="14sp"
                         android:textStyle="bold"/>
 
                     <TextView

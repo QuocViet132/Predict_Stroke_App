@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.strokeprediction.Calculator_Bmi_Activity;
+import com.example.strokeprediction.Information_Activity;
 import com.example.strokeprediction.MainActivity2;
 import com.example.strokeprediction.Medical_Image_Activity;
 import com.example.strokeprediction.Medical_Index_Activity;
@@ -63,7 +64,7 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    CardView cardIndex, cardImage, cardLibrary, cardSchedule, cardUser, cardBmi;
+    CardView cardIndex, cardImage, cardLibrary, cardInformation, cardUser, cardBmi;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -73,7 +74,7 @@ public class HomeFragment extends Fragment {
         cardIndex = view.findViewById(R.id.card_index_predict);
         cardImage = view.findViewById(R.id.card_image_predict);
         cardLibrary = view.findViewById(R.id.card_library);
-        cardSchedule = view.findViewById(R.id.card_calender);
+        cardInformation = view.findViewById(R.id.card_calender);
         cardUser = view.findViewById(R.id.card_user);
         cardBmi = view.findViewById(R.id.card_bmi);
 
@@ -113,18 +114,25 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        cardUser.setOnClickListener(new View.OnClickListener() {
+//        cardUser.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(view.getContext(), MainActivity2.class);
+//                Bundle bundle = new Bundle();
+//
+//                bundle.putInt("user",3);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//            }
+//        });
+
+        cardInformation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(view.getContext(), MainActivity2.class);
-                Bundle bundle = new Bundle();
-
-                bundle.putInt("user",3);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                Intent intentInformation = new Intent(view.getContext(), Information_Activity.class);
+                startActivity(intentInformation);
             }
         });
-
         return view;
     }
 }

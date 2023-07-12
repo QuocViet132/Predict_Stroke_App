@@ -30,10 +30,11 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Medical_Index_Activity extends AppCompatActivity {
 
-    String url = "https://26c5-112-197-193-112.ngrok-free.app/predict";
+    String url = "https://4657-112-197-193-112.ngrok-free.app/predict";
     EditText etAge, etBmi, etGlucose;
     String genderMale = "0";
     String genderOther = "0";
@@ -125,8 +126,8 @@ public class Medical_Index_Activity extends AppCompatActivity {
         rangeOverWeight = new com.ekn.gruzer.gaugelibrary.Range();
         rangeObesity = new com.ekn.gruzer.gaugelibrary.Range();
 
-        rangeUnderWeight.setFrom(0); rangeUnderWeight.setTo(19);
-        rangeIdeal.setFrom(19); rangeIdeal.setTo(25);
+        rangeUnderWeight.setFrom(0); rangeUnderWeight.setTo(18);
+        rangeIdeal.setFrom(18); rangeIdeal.setTo(25);
         rangeOverWeight.setFrom(25); rangeOverWeight.setTo(30);
         rangeObesity.setFrom(30); rangeObesity.setTo(83);
 
@@ -173,13 +174,13 @@ public class Medical_Index_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medical_index);
-        try {
-            Intent intentLinkApi = getIntent();
-            url = intentLinkApi.getStringExtra("LinkApi");
-            Log.d("url",url);
-        } catch (Exception NullPointerException) {
-            Toast.makeText(Medical_Index_Activity.this,"URL Default",Toast.LENGTH_SHORT).show();
-        }
+//        try {
+//            Intent intentLinkApi = getIntent();
+//            url = intentLinkApi.getStringExtra("LinkApi");
+//            Log.d("url",url);
+//        } catch (Exception NullPointerException) {
+////            Toast.makeText(Medical_Index_Activity.this,"URL Default",Toast.LENGTH_SHORT).show();
+//        }
 
         etAge = (EditText) findViewById(R.id.et_age);
         etBmi = (EditText) findViewById(R.id.et_bmi);
@@ -359,21 +360,21 @@ public class Medical_Index_Activity extends AppCompatActivity {
                 if(Double.parseDouble(etBmi.getText().toString()) < 0 || Double.parseDouble(etBmi.getText().toString()) > 10000){
                     Toast.makeText(Medical_Index_Activity.this,"BMI bạn nhập không đúng. Hãy nhập lại!",Toast.LENGTH_SHORT).show();
                 }
-                if(Double.parseDouble(etBmi.getText().toString()) >= 0 && Double.parseDouble(etBmi.getText().toString()) <= 18){
+                if(Double.parseDouble(etBmi.getText().toString()) >= 0 && Double.parseDouble(etBmi.getText().toString()) < 18){
                     resetBmiCat();
                     tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_underweight));
                 }
-                if(Double.parseDouble(etBmi.getText().toString()) > 18 && Double.parseDouble(etBmi.getText().toString()) <= 24){
+                if(Double.parseDouble(etBmi.getText().toString()) >= 18 && Double.parseDouble(etBmi.getText().toString()) < 25){
                     resetBmiCat();
                     bmiCatIdeal = "1";
                     tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_ideal));
                 }
-                if(Double.parseDouble(etBmi.getText().toString()) > 24 && Double.parseDouble(etBmi.getText().toString()) <= 29){
+                if(Double.parseDouble(etBmi.getText().toString()) >= 25 && Double.parseDouble(etBmi.getText().toString()) < 30){
                     resetBmiCat();
                     bmiCatOverweight = "1";
                     tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_overweight));
                 }
-                if(Double.parseDouble(etBmi.getText().toString()) > 29 && Double.parseDouble(etBmi.getText().toString()) <= 10000){
+                if(Double.parseDouble(etBmi.getText().toString()) >= 30 && Double.parseDouble(etBmi.getText().toString()) < 84){
                     resetBmiCat();
                     bmiCatObesity = "1";
                     tvAnalysisBmi.setText(getResources().getString(R.string.advice_for_bmi_obesity));
@@ -423,7 +424,8 @@ public class Medical_Index_Activity extends AppCompatActivity {
                         new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(Medical_Index_Activity.this,error.getMessage().toString(), Toast.LENGTH_SHORT).show();
+//                                Toast.makeText(Medical_Index_Activity.this, Objects.requireNonNull(error.getMessage()).toString(), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Medical_Index_Activity.this, "Loi ", Toast.LENGTH_SHORT).show();
                             }
                         }){
 

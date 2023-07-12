@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Information_Activity">
+
+    <TextView
+        android:id="@+id/information_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_infor_title"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"/>
+    <LinearLayout
+        android:id="@+id/information_introduce"
+        android:layout_below="@id/information_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_introduce"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ứng dụng dự đoán đột quỵ là một sản phẩm đồ án tốt nghiệp của sinh viên khoa Điện Tử Viễn Thông - Trường ĐH Bách Khoa Đà Nẵng. Ứng dụng này giúp triển khai mô hình trí tuệ nhân tạo mà nhóm đã xây dựng vào trong thực tế. Sản phẩm sẽ giúp người dùng dự đoán nguy cơ mắc đột quỵ của họ, hướng dẫn điều chỉnh lối sinh hoạt phù hợp để giúp phòng tránh, giảm thiểu những yếu tố gây ra đột quỵ trong tương lai. Ngoài ra ứng dụng còn có thể giúp chuẩn đoán đột quỵ bằng ảnh CT não một cách nhanh chóng."
+            android:textSize="18sp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/information_link_web"
+        android:layout_below="@id/information_introduce"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_link_web"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_click_link_web"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            android:textColor="#003DB6"
+            android:layout_marginStart="15dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/information_language_code"
+        android:layout_below="@id/information_link_web"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_language_code"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:padding="12dp"/>
+
+    <LinearLayout
+        android:id="@+id/tv_java"
+        android:layout_below="@id/information_language_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp"
+        tools:ignore="UseCompoundDrawables">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/java"
+            android:importantForAccessibility="no" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_java"
+            android:textSize="18sp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/python"
+            android:importantForAccessibility="no"
+            android:layout_marginStart="90dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_python"
+            android:textSize="18sp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tv_version"
+        android:layout_below="@id/tv_java"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_version"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_num_version"
+            android:textSize="18sp"
+            android:layout_marginStart="15dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/tv_author"
+        android:layout_below="@id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_author"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nguyễn Quốc Việt     19DTCLC2\nĐinh Ngọc Tiên\t\t\t\t\t\t19DTCLC2"
+            android:textSize="18sp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="38dp"/>
+    </LinearLayout>
+</RelativeLayout>
