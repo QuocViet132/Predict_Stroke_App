@@ -1,4 +1,6 @@
 # Predict_Stroke_App
+## Introduction
+This is Stroke Prediction application. The app uses clinical features or CT scans of the user's brain to predict if the person is likely to have a stroke. In addition, the application has a few additional features such as calculating BMI, a guide on how to prevent and handle when someone has a stroke.
 
 ![image](https://github.com/QuocViet132/Predict_Stroke_App/assets/95084615/b0e1eff1-3a40-4376-b128-aabcaacb4d38)
 ![image](https://github.com/QuocViet132/Predict_Stroke_App/assets/95084615/b5bf5983-0446-49bb-ad34-15b82c16425b)
