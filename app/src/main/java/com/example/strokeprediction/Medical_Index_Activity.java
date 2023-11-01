@@ -34,7 +34,7 @@ import java.util.Objects;
 
 public class Medical_Index_Activity extends AppCompatActivity {
 
-    String url = "https://4657-112-197-193-112.ngrok-free.app/predict";
+    String url = "https://7be0-171-255-173-253.ngrok-free.app/predict";
     EditText etAge, etBmi, etGlucose;
     String genderMale = "0";
     String genderOther = "0";
